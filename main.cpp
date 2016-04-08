@@ -42,9 +42,7 @@ void containers(Slav * slavs, int n)
 	vector <Slav *> vectorOfSlavs;
 	set <Slav *> setOfSlavs;
 	map <Slav *, Slav *> mapOfSlavs;
-	map <int, vector<Slav *>> mapOfSexes;
-	vector <Slav *> SlavFemales;
-	vector <Slav *> SlavMales;
+	
 	
 	printf("# Containers\n");
 	REPORT_CONTAINERS;
@@ -90,19 +88,6 @@ void containers(Slav * slavs, int n)
 		cout << it->first->description() << ' ' << it->second->description() << endl;
 	}
 	REPORT_CONTAINERS;
-
-	//Zadanie na 5
-	/*if(slavs[0].determineSex() == MALE) {
-		cout << "DUPA" << endl;
-	}*/
-	mapOfSexes[0] = SlavMales;
-	mapOfSexes[1] = SlavFemales;
-	for(int i = 0; i < n; i++) {
-		if(slavs[i].determineSex() == 0)
-			SlavMales.push_back(&slavs[i]);
-		else
-			SlavFemales.push_back(&slavs[i]);
-	}
 }
 
 void adapters(Slav * slavs, int n)
