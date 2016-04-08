@@ -24,4 +24,7 @@ public:
 	int id() { return _id; }
 
 	string description();
+	enum sex {MALE = 0, FEMALE = 1};
+	sex determineSex();
+
 };

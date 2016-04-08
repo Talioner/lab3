@@ -1,8 +1,7 @@
 #include "Slav.h"
 #include <fstream>
-
-using namespace std;
-
+#include <ctime>
+#include <iterator>
 vector <string> Slav::names;
 int Slav::_counter = 0;
 
@@ -26,4 +25,13 @@ Slav::Slav()
 string Slav::description()
 {
 	return string("  ") + _name + " [" + to_string(_id) + "]";
+}
+	
+Slav::sex Slav::determineSex() {
+	sex rvalue;
+	if(_name[_name.size()-1] == 'a') 
+		rvalue = FEMALE;
+	else
+		rvalue = MALE;
+	return rvalue;
 }
